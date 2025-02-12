@@ -1,5 +1,17 @@
 import { openai } from '@ai-sdk/openai';
 import { fireworks } from '@ai-sdk/fireworks';
+import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
+
+// or with bedrockOptions
+const bedrock = createAmazonBedrock({
+  bedrockOptions: {
+    region: 'us-east-1',
+    credentials: {
+      accessKeyId: 'xxxxxxxxx',
+      secretAccessKey: 'xxxxxxxxx',
+    },
+  },
+});
 import {
   customProvider,
   extractReasoningMiddleware,
